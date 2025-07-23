@@ -1,0 +1,68 @@
+===============================
+🛠 ms_tool - Command Cheat Sheet
+===============================
+
+Author: Mayur Patil
+Date: July 2025
+
+Tool Type: Android Static Analysis Scanner
+
+--------------------------------------
+📌 Basic Usage (Scan APK or Folder)
+--------------------------------------
+
+# Scan all modules on an APK file and output to TXT
+python ms_tool.py --path insecure.apk --all --output txt
+
+# Scan all modules on a decompiled source folder
+python ms_tool.py --path insecure_code/ --all --output json
+
+--------------------------------------
+🎯 Module-Based Custom Scan
+--------------------------------------
+
+# Only check for hardcoded credentials and insecure storage
+python ms_tool.py --path app.apk --insecure_credentials --insecure_data_storage --output txt
+
+# Only scan for WebView JS interface issues
+python ms_tool.py --path app.apk --webview_js --output txt
+
+# Scan for root detection bypass and SSL pinning bypass
+python ms_tool.py --path app.apk --root_detection --ssl_pinning --output json
+
+--------------------------------------
+🧪 Decompiling APK Manually (Optional)
+--------------------------------------
+
+apktool d your_app.apk -o output_folder_name
+
+# Then scan the output folder:
+python ms_tool.py --path output_folder_name/ --all --output txt
+
+--------------------------------------
+📤 Output Formats
+--------------------------------------
+
+# Save output in plain .txt format (default)
+--output txt
+
+# Save output in .json format for automation
+--output json
+
+--------------------------------------
+📚 Help
+--------------------------------------
+
+# Show full help with all flags
+python ms_tool.py --help
+
+--------------------------------------
+⚠️ Notes
+--------------------------------------
+
+- The tool automatically decompiles APKs using apktool (if given directly).
+- You must have `apktool` installed and in your PATH.
+- Use `pip install colorama` for colored CLI output.
+- Works on `.apk`, `.smali`, `.java`, `.kt`, `.xml`, and `.txt` file types.
+
+===============================

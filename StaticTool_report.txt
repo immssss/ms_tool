@@ -1,0 +1,66 @@
+
+---
+
+### 📄 `StaticTool_Report.txt`
+
+```text
+------------------------------------------------------
+            Static Analysis Report - ms_tool
+------------------------------------------------------
+
+🛠 Tool Name:        ms_tool
+👨‍💻 Developed By:    Mayur Patil
+📅 Date:             July 2025
+🔎 Type:             Android Static Code Analyzer
+
+------------------------------------------------------
+🔍 TOOL OBJECTIVE:
+------------------------------------------------------
+This tool helps security researchers and Android testers 
+detect insecure code patterns in APKs or decompiled apps.
+
+It automates the identification of common mobile app 
+vulnerabilities by searching for risky function usage 
+and insecure code constructs.
+
+------------------------------------------------------
+📁 SUPPORTED INPUTS:
+------------------------------------------------------
+- APK files (auto-decompiled using apktool)
+- Decompiled Android source folders
+
+------------------------------------------------------
+🎯 SUPPORTED VULNERABILITIES:
+------------------------------------------------------
+1. Reverse Engineering Risk
+2. WebView + JavaScriptInterface Exposure
+3. Logging & Error Handling Issues
+4. Root Detection Bypass Checks
+5. Firebase Misconfiguration
+6. SSL Pinning Bypass Opportunities
+7. Insecure Data Storage
+8. Hardcoded Credentials or API Keys
+9. Weak Cryptographic Algorithms
+10. Poor Code Quality (eval/exec)
+11. Extraneous Debug/Test Code
+12. Unprotected Deep Linking
+
+------------------------------------------------------
+📤 OUTPUT:
+------------------------------------------------------
+- scan_results.txt  → Human-readable scan result
+- scan_results.json → Machine-parseable result
+
+------------------------------------------------------
+✅ SAMPLE COMMAND:
+------------------------------------------------------
+python ms_tool.py --path sample.apk --all --output txt
+
+------------------------------------------------------
+📌 REMARK:
+------------------------------------------------------
+Always review the findings manually. This tool uses 
+static keyword patterns and should be used alongside 
+manual analysis and dynamic tools for full coverage.
+
+------------------------------------------------------
